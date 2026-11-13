@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Week 7 JavaScript persistence and code quality challenges."
+        />
+        <title>Daily challenges — Daylight</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="challenges.css" />
+        <script type="module" src="challenges.js"></script>
+    </head>
+    <body>
+        <div class="page-shell">
+            <header class="topbar">
+                <a class="brand" href="../" aria-label="Daylight home">
+                    <span class="brand-mark" aria-hidden="true">d</span>
+                    <span>daylight</span>
+                </a>
+                <nav class="topbar-nav" aria-label="Main navigation">
+                    <a class="nav-link" href="../">My tasks</a>
+                    <a class="nav-link" href="../cart/">Shopping cart</a>
+                    <a class="nav-link nav-link-current" href="./" aria-current="page"
+                        >Daily challenges</a
+                    >
+                </nav>
+                <button
+                    class="icon-button"
+                    id="theme-toggle"
+                    type="button"
+                    aria-label="Switch to dark theme"
+                    aria-pressed="false"
+                >
+                    ◐
+                </button>
+            </header>
+
+            <main class="challenge-main">
+                <section class="challenge-intro">
+                    <p class="eyebrow">
+                        <span class="eyebrow-dot" aria-hidden="true"></span> PRACTICE BY BUILDING
+                    </p>
+                    <h1>Small challenges, <span>better habits.</span></h1>
+                    <p class="intro-copy">
+                        Each interaction demonstrates one of this week's persistence and
+                        code-quality patterns.
+                    </p>
+                </section>
+
+                <div class="challenge-grid">
+                    <section class="challenge-card" aria-labelledby="search-heading">
+                        <p class="section-kicker">DAY 2</p>
+                        <h2 id="search-heading">Recent searches</h2>
+                        <p>
+                            Searches are saved on this device. Choose a suggestion to search it
+                            again.
+                        </p>
+                        <form class="challenge-form" id="search-form">
+                            <label for="search-input">Search phrase</label>
+                            <div class="challenge-input-row">
+                                <input
+                                    id="search-input"
+                                    name="search"
+                                    type="search"
+                                    maxlength="100"
+                                    autocomplete="off"
+                                    required
+                                />
+                                <button class="add-button" type="submit">Search</button>
+                            </div>
+                        </form>
+                        <ul
+                            class="search-suggestions"
+                            id="search-suggestions"
+                            aria-label="Recent searches"
+                        ></ul>
+                        <p
+                            class="challenge-status"
+                            id="search-status"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
+                    </section>
+
+                    <section class="challenge-card" aria-labelledby="draft-heading">
+                        <p class="section-kicker">DAY 3</p>
+                        <h2 id="draft-heading">Auto-save a message</h2>
+                        <p>Your draft is saved every five seconds and restored after a refresh.</p>
+                        <form class="challenge-form" id="draft-form">
+                            <label for="draft-name">Name</label>
+                            <input
+                                id="draft-name"
+                                name="name"
+                                type="text"
+                                autocomplete="name"
+                                required
+                            />
+                            <label for="draft-email">Email</label>
+                            <input
+                                id="draft-email"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                required
+                            />
+                            <label for="draft-message">Message</label>
+                            <textarea
+                                id="draft-message"
+                                name="message"
+                                rows="4"
+                                required
+                            ></textarea>
+                            <div class="draft-actions">
+                                <button class="add-button" type="submit">Submit and clear</button>
+                                <span
+                                    class="challenge-status"
+                                    id="draft-status"
+                                    role="status"
+                                    aria-live="polite"
+                                ></span>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="challenge-card" aria-labelledby="session-heading">
+                        <p class="section-kicker">LESSON 13.3</p>
+                        <h2 id="session-heading">Tab-only draft</h2>
+                        <p>
+                            This short note uses <code>sessionStorage</code>, so it is restored in
+                            this tab and removed when the browsing session ends.
+                        </p>
+                        <form class="challenge-form" id="session-form">
+                            <label for="session-note">Temporary note</label>
+                            <textarea id="session-note" name="note" rows="3"></textarea>
+                            <div class="draft-actions">
+                                <button class="add-button" type="submit">Clear tab draft</button>
+                                <span
+                                    class="challenge-status"
+                                    id="session-status"
+                                    role="status"
+                                    aria-live="polite"
+                                ></span>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section
+                        class="challenge-card challenge-notes"
+                        aria-labelledby="refactor-heading"
+                    >
+                        <p class="section-kicker">DAY 4</p>
+                        <h2 id="refactor-heading">Refactor challenge</h2>
+                        <p>
+                            The main to-do app is the refactored example: pure task transformations
+                            live in <code>js/todo-logic.js</code>, persistence lives in
+                            <code>js/storage.js</code>, and DOM rendering lives in
+                            <code>js/ui.js</code>. ESLint and unit tests exercise the boundaries.
+                        </p>
+                        <a class="challenge-link" href="../"
+                            >Explore the modular to-do app <span aria-hidden="true">→</span></a
+                        >
+                    </section>
+
+                    <section
+                        class="challenge-card challenge-notes"
+                        aria-labelledby="review-heading"
+                    >
+                        <p class="section-kicker">DAY 5</p>
+                        <h2 id="review-heading">Weather dashboard review</h2>
+                        <p>
+                            A review summary of the Weather Dashboard and actionable improvements is
+                            included in this project's README. No changes were made to that separate
+                            project.
+                        </p>
+                        <a class="challenge-link" href="../README.md"
+                            >Read the review notes <span aria-hidden="true">→</span></a
+                        >
+                    </section>
+                </div>
+            </main>
+            <footer class="page-footer">
+                <a href="../">Back to your tasks <span aria-hidden="true">→</span></a>
+            </footer>
+        </div>
+    </body>
+</html>

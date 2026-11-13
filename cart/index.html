@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="A small shopping cart with saved items and undo." />
+        <title>Market basket — Daylight</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="cart.css" />
+        <script type="module" src="cart.js"></script>
+    </head>
+    <body>
+        <div class="page-shell">
+            <header class="topbar">
+                <a class="brand" href="../" aria-label="Daylight home">
+                    <span class="brand-mark" aria-hidden="true">d</span>
+                    <span>daylight</span>
+                </a>
+                <nav class="topbar-nav" aria-label="Main navigation">
+                    <a class="nav-link" href="../">My tasks</a>
+                    <a class="nav-link nav-link-current" href="./" aria-current="page"
+                        >Shopping cart</a
+                    >
+                    <a class="nav-link" href="../daily-challenges/">Daily challenges</a>
+                </nav>
+            </header>
+
+            <main class="cart-main">
+                <section class="cart-intro">
+                    <p class="eyebrow">
+                        <span class="eyebrow-dot" aria-hidden="true"></span> A SMALL LOCAL MARKET
+                    </p>
+                    <h1>Build your <span>basket.</span></h1>
+                    <p class="intro-copy">
+                        Add a few favourites. Your basket stays on this device.
+                    </p>
+                </section>
+
+                <div class="cart-grid">
+                    <section class="cart-panel" aria-labelledby="products-heading">
+                        <div class="cart-panel-heading">
+                            <h2 id="products-heading">Market favourites</h2>
+                            <span class="task-count" id="cart-count">0 items</span>
+                        </div>
+                        <ul class="product-list" id="product-list" aria-label="Products"></ul>
+                    </section>
+
+                    <section class="cart-panel basket-panel" aria-labelledby="basket-heading">
+                        <div class="cart-panel-heading">
+                            <h2 id="basket-heading">Your basket</h2>
+                            <div class="basket-actions">
+                                <button class="text-button" id="undo-cart" type="button" disabled>
+                                    Undo
+                                </button>
+                                <button class="text-button" id="clear-cart" type="button" disabled>
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+                        <p
+                            class="storage-status"
+                            id="cart-status"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
+                        <ul class="basket-list" id="basket-list" aria-label="Basket items"></ul>
+                        <p class="basket-empty" id="basket-empty">
+                            Your basket is empty. Add something from the market.
+                        </p>
+                        <div class="basket-total">
+                            <span>Total</span>
+                            <strong id="cart-total">KSh 0</strong>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <footer class="page-footer">
+                <a href="../">Back to your tasks <span aria-hidden="true">→</span></a>
+            </footer>
+        </div>
+    </body>
+</html>
